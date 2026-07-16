@@ -1,6 +1,10 @@
 # Mission Billboards
 
+<<<<<<< HEAD
 A polished static marketing website for a billboard-buying partner serving nonprofits, advocacy groups, and political organizations. Built with Vite and React, with a Netlify Forms contact workflow. 
+=======
+A simple static lead-generation website for a billboard-buying partner serving nonprofits, advocacy groups, civic organizations, and political campaigns. Built with Vite and React, with a Netlify Forms contact workflow.
+>>>>>>> ffdaa52 (rewrite copy)
 
 ## Local Development
 
