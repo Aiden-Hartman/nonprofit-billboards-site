@@ -1,39 +1,49 @@
 import React from "react";
 
-const helpItems = [
+const serviceItems = [
   {
     title: "Find available billboard options",
-    body: "We help look into available outdoor placements in the markets you care about.",
+    body: "We help look into available outdoor placements in the markets, routes, or regions you care about.",
   },
   {
-    title: "Coordinate market, timing, and budget details",
-    body: "We help organize the practical details so you can compare options clearly.",
+    title: "Coordinate campaign details",
+    body: "We help organize market, timing, budget, and placement details so options can be compared clearly.",
   },
   {
-    title: "Help organize creative specs and next steps",
-    body: "We help clarify artwork requirements, timing, and what is needed to move forward.",
+    title: "Prepare next steps",
+    body: "We help clarify creative specs, deadlines, and practical requirements before a campaign moves forward.",
   },
 ];
 
 const campaignTypes = [
-  "Nonprofit awareness campaigns",
+  "Nonprofit awareness",
   "Advocacy and issue campaigns",
-  "Political and voter education campaigns",
+  "Political and voter education",
 ];
 
-function BillboardVisual() {
+function PlanningPanel() {
   return (
-    <div className="billboard-visual" aria-label="Simple billboard illustration">
-      <div className="board-face">
-        <span>Available placements</span>
-        <strong>Market options</strong>
+    <aside className="planning-panel" aria-label="Billboard availability planning note">
+      <div className="panel-kicker">Planning note</div>
+      <div className="panel-board">
+        <span>Outdoor placement review</span>
+        <strong>Availability, pricing, and market fit.</strong>
       </div>
-      <div className="board-posts">
-        <span />
-        <span />
+      <div className="memo-list">
+        <div>
+          <span>Market</span>
+          <p>City, route, region, or state</p>
+        </div>
+        <div>
+          <span>Format</span>
+          <p>Static or digital options</p>
+        </div>
+        <div>
+          <span>Timing</span>
+          <p>Launch month or deadline</p>
+        </div>
       </div>
-      <div className="ground-line" />
-    </div>
+    </aside>
   );
 }
 
@@ -55,66 +65,87 @@ function App() {
       <main id="home">
         <section className="hero section-shell">
           <div className="hero-copy">
+            <p className="section-label">Billboard planning and placement support</p>
             <h1>Billboard placements for nonprofits and political campaigns.</h1>
             <p className="hero-subhead">
               We help nonprofits, advocacy groups, and political organizations explore billboard availability, pricing, and placement options in the markets that matter.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="#contact">Request Availability</a>
-              <a className="button secondary" href="#help">See What We Help With</a>
+              <a className="button secondary" href="#examples">View Examples</a>
             </div>
           </div>
-          <BillboardVisual />
+          <PlanningPanel />
         </section>
 
-        <section className="help section-shell" id="help" aria-labelledby="help-title">
-          <div className="section-heading">
-            <h2 id="help-title">What we help with</h2>
+        <section className="services section-shell" id="services" aria-labelledby="services-title">
+          <div className="section-intro">
+            <p className="section-label">Outdoor media planning</p>
+            <h2 id="services-title">What we do</h2>
             <p>
-              Outdoor advertising can be useful, but inventory, pricing, timing, and creative requirements are not always easy to navigate.
+              Outdoor advertising can be useful, but availability, pricing, timing, and creative requirements are not always easy to navigate.
             </p>
           </div>
-          <div className="help-list">
-            {helpItems.map((item) => (
-              <article className="help-item" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
+          <div className="service-list">
+            {serviceItems.map((item, index) => (
+              <article className="service-row" key={item.title}>
+                <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="examples light-section" id="examples" aria-labelledby="examples-title">
+        <section className="examples section-band" id="examples" aria-labelledby="examples-title">
           <div className="section-shell examples-layout">
-            <div className="section-heading">
-              <h2 id="examples-title">Campaign examples</h2>
+            <div className="section-intro">
+              <p className="section-label">Campaign examples</p>
+              <h2 id="examples-title">Previous advertisers</h2>
               <p>
-                Every campaign depends on the market, message, timing, and budget. We can share relevant examples and references after learning more about your goals.
+                Previous advertiser examples and references can be shared after an initial conversation.
               </p>
             </div>
-            <div className="category-list" aria-label="Campaign categories">
-              {campaignTypes.map((type) => (
-                <div className="category-item" key={type}>
-                  <span />
-                  <p>{type}</p>
-                </div>
-              ))}
+            <div className="examples-panel">
+              <div className="logo-rail" aria-hidden="true">
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+              <div className="category-tags" aria-label="Campaign categories">
+                {campaignTypes.map((type) => (
+                  <span key={type}>{type}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         <section className="about section-shell" id="about" aria-labelledby="about-title">
+          <div className="about-rule" />
           <div className="about-layout">
-            <h2 id="about-title">About Mission Billboards</h2>
-            <p>
-              Mission Billboards helps mission-driven organizations explore outdoor advertising opportunities without needing to manage the process alone. We focus on practical planning, clear communication, and helping teams understand what options may be available in their target markets.
-            </p>
+            <div>
+              <p className="section-label">About</p>
+              <h2 id="about-title">About Mission Billboards</h2>
+            </div>
+            <div className="about-copy">
+              <p>
+                Mission Billboards helps mission-driven organizations explore outdoor advertising opportunities without needing to manage the process alone. We focus on practical planning, clear communication, and helping teams understand what options may be available in their target markets.
+              </p>
+              <p>
+                The goal is simple: make billboard planning easier for nonprofits, advocacy groups, and political campaigns that need public visibility.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="contact light-section" id="contact" aria-labelledby="contact-title">
+        <section className="contact section-band" id="contact" aria-labelledby="contact-title">
           <div className="section-shell contact-layout">
             <div className="contact-intro">
+              <p className="section-label">Contact</p>
               <h2 id="contact-title">Request billboard availability</h2>
               <p>Share the basics of your campaign and we will follow up with next steps.</p>
             </div>
@@ -173,7 +204,7 @@ function App() {
               </label>
               <label>
                 Timeline
-                <input name="timeline" type="text" placeholder="Example: launch month or deadline" />
+                <input name="timeline" type="text" placeholder="Launch month or deadline" />
               </label>
               <label className="full-span">
                 Message
