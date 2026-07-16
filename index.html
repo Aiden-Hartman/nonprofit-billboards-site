@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mission Billboards helps nonprofits, advocacy groups, and political organizations plan and buy effective billboard advertising campaigns."
+    />
+    <title>Mission Billboards | Billboard Planning for Mission-Driven Campaigns</title>
+  </head>
+  <body>
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/thank-you.html"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p hidden>
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+      <input type="text" name="name" />
+      <input type="text" name="organization" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="campaignType">
+        <option value=""></option>
+      </select>
+      <input type="text" name="market" />
+      <input type="text" name="budget" />
+      <input type="text" name="timeline" />
+      <textarea name="message"></textarea>
+    </form>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
