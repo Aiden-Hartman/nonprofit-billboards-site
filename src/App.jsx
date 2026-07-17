@@ -49,9 +49,9 @@ function App() {
   return (
     <>
       <header className="site-header">
-        <a className="brand" href="#home" aria-label="Mission Billboards home">
+        <a className="brand" href="#home" aria-label="Nonprofit Billboards home">
           <span className="brand-mark">MB</span>
-          <span>Mission Billboards</span>
+          <span>Nonprofit Billboards</span>
         </a>
         <nav className="nav-links" aria-label="Primary navigation">
           <a href="#what-we-do">What We Do</a>
@@ -115,10 +115,10 @@ function App() {
 
         <section className="section-shell about-section" id="about" aria-labelledby="about-title">
           <div className="about-layout">
-            <h2 id="about-title">About Mission Billboards</h2>
+            <h2 id="about-title">About Nonprofit Billboards</h2>
             <div>
               <p>
-                Mission Billboards helps mission-driven organizations explore outdoor advertising opportunities without needing to manage the process alone. We focus on practical planning, clear communication, and helping teams understand what options may be available in their target markets.
+                Nonprofit Billboards helps mission-driven organizations explore outdoor advertising opportunities without needing to manage the process alone. We focus on practical planning, clear communication, and helping teams understand what options may be available in their target markets.
               </p>
               <p>
                 The goal is simple: make billboard planning easier for nonprofits, advocacy groups, and political campaigns that need public visibility.
@@ -143,7 +143,7 @@ function App() {
               action="/thank-you.html"
             >
               <input type="hidden" name="form-name" value="contact" />
-              <input type="hidden" name="subject" value="New Mission Billboards inquiry" />
+              <input type="hidden" name="subject" value="New Nonprofit Billboards inquiry" />
               <p className="hidden-field" aria-hidden="true">
                 <label>
                   Don't fill this out if you're human:
@@ -204,7 +204,7 @@ function App() {
       <footer className="site-footer">
         <div className="section-shell footer-inner">
           <div>
-            <strong>Mission Billboards</strong>
+            <strong>Nonprofit Billboards</strong>
             <p>Billboard planning and placement support for mission-driven campaigns.</p>
           </div>
           <nav className="footer-links" aria-label="Footer navigation">
