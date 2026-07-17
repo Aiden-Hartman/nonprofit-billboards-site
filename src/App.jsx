@@ -50,7 +50,7 @@ function App() {
     <>
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Nonprofit Billboards home">
-          <span className="brand-mark">MB</span>
+          <span className="brand-mark">NB</span>
           <span>Nonprofit Billboards</span>
         </a>
         <nav className="nav-links" aria-label="Primary navigation">
