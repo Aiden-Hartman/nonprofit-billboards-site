@@ -1,6 +1,6 @@
 import React from "react";
 
-const serviceItems = [
+const services = [
   {
     title: "Find available billboard options",
     body: "We help look into available outdoor placements in the markets, routes, or regions you care about.",
@@ -21,28 +21,26 @@ const campaignTypes = [
   "Political and voter education",
 ];
 
-function PlanningPanel() {
+const inquiryBasics = [
+  "Market or route",
+  "Campaign timing",
+  "Budget range",
+  "Message or cause",
+];
+
+function InquiryCard() {
   return (
-    <aside className="planning-panel" aria-label="Billboard availability planning note">
-      <div className="panel-kicker">Planning note</div>
-      <div className="panel-board">
-        <span>Outdoor placement review</span>
-        <strong>Availability, pricing, and market fit.</strong>
+    <aside className="inquiry-card" aria-label="Inquiry preview">
+      <h2>Start with the basics</h2>
+      <div className="basics-list">
+        {inquiryBasics.map((item) => (
+          <div className="basic-row" key={item}>
+            <span aria-hidden="true" />
+            <p>{item}</p>
+          </div>
+        ))}
       </div>
-      <div className="memo-list">
-        <div>
-          <span>Market</span>
-          <p>City, route, region, or state</p>
-        </div>
-        <div>
-          <span>Format</span>
-          <p>Static or digital options</p>
-        </div>
-        <div>
-          <span>Timing</span>
-          <p>Launch month or deadline</p>
-        </div>
-      </div>
+      <p className="card-note">Submit the form below and we'll follow up with next steps.</p>
     </aside>
   );
 }
@@ -56,66 +54,57 @@ function App() {
           <span>Mission Billboards</span>
         </a>
         <nav className="nav-links" aria-label="Primary navigation">
-          <a href="#examples">Examples</a>
+          <a href="#what-we-do">What We Do</a>
+          <a href="#previous-advertisers">Previous Advertisers</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <main id="home">
-        <section className="hero section-shell">
-          <div className="hero-copy">
-            <p className="section-label">Billboard planning and placement support</p>
-            <h1>Billboard placements for nonprofits and political campaigns.</h1>
-            <p className="hero-subhead">
-              We help nonprofits, advocacy groups, and political organizations explore billboard availability, pricing, and placement options in the markets that matter.
-            </p>
-            <div className="hero-actions">
-              <a className="button primary" href="#contact">Request Availability</a>
-              <a className="button secondary" href="#examples">View Examples</a>
+        <section className="hero">
+          <div className="section-shell hero-layout">
+            <div className="hero-copy">
+              <p className="eyebrow">Billboard planning for mission-driven campaigns</p>
+              <h1>Billboard placements for nonprofits and political campaigns.</h1>
+              <p className="hero-subhead">
+                We help nonprofits, advocacy groups, and political organizations explore billboard availability, pricing, and placement options in the markets that matter.
+              </p>
+              <div className="hero-actions">
+                <a className="button primary" href="#contact">Request Availability</a>
+                <a className="button secondary" href="#what-we-do">See How It Works</a>
+              </div>
             </div>
+            <InquiryCard />
           </div>
-          <PlanningPanel />
         </section>
 
-        <section className="services section-shell" id="services" aria-labelledby="services-title">
-          <div className="section-intro">
-            <p className="section-label">Outdoor media planning</p>
-            <h2 id="services-title">What we do</h2>
+        <section className="section-shell content-section" id="what-we-do" aria-labelledby="what-title">
+          <div className="section-heading">
+            <h2 id="what-title">What we do</h2>
             <p>
               Outdoor advertising can be useful, but availability, pricing, timing, and creative requirements are not always easy to navigate.
             </p>
           </div>
-          <div className="service-list">
-            {serviceItems.map((item, index) => (
-              <article className="service-row" key={item.title}>
-                <span className="row-number">{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.body}</p>
-                </div>
+          <div className="service-grid">
+            {services.map((service) => (
+              <article className="service-card" key={service.title}>
+                <h3>{service.title}</h3>
+                <p>{service.body}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="examples section-band" id="examples" aria-labelledby="examples-title">
-          <div className="section-shell examples-layout">
-            <div className="section-intro">
-              <p className="section-label">Campaign examples</p>
-              <h2 id="examples-title">Previous advertisers</h2>
-              <p>
-                Previous advertiser examples and references can be shared after an initial conversation.
-              </p>
+        <section className="section-panel" id="previous-advertisers" aria-labelledby="advertisers-title">
+          <div className="section-shell advertisers-layout">
+            <div className="section-heading">
+              <h2 id="advertisers-title">Previous advertisers</h2>
+              <p>Previous advertiser examples and references can be shared after an initial conversation.</p>
             </div>
-            <div className="examples-panel">
-              <div className="logo-rail" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-                <span />
-              </div>
-              <div className="category-tags" aria-label="Campaign categories">
+            <div className="advertisers-card">
+              <p className="placeholder-note">Campaign types we can discuss:</p>
+              <div className="campaign-types">
                 {campaignTypes.map((type) => (
                   <span key={type}>{type}</span>
                 ))}
@@ -124,14 +113,10 @@ function App() {
           </div>
         </section>
 
-        <section className="about section-shell" id="about" aria-labelledby="about-title">
-          <div className="about-rule" />
+        <section className="section-shell about-section" id="about" aria-labelledby="about-title">
           <div className="about-layout">
+            <h2 id="about-title">About Mission Billboards</h2>
             <div>
-              <p className="section-label">About</p>
-              <h2 id="about-title">About Mission Billboards</h2>
-            </div>
-            <div className="about-copy">
               <p>
                 Mission Billboards helps mission-driven organizations explore outdoor advertising opportunities without needing to manage the process alone. We focus on practical planning, clear communication, and helping teams understand what options may be available in their target markets.
               </p>
@@ -142,10 +127,9 @@ function App() {
           </div>
         </section>
 
-        <section className="contact section-band" id="contact" aria-labelledby="contact-title">
+        <section className="contact-section" id="contact" aria-labelledby="contact-title">
           <div className="section-shell contact-layout">
-            <div className="contact-intro">
-              <p className="section-label">Contact</p>
+            <div className="contact-copy">
               <h2 id="contact-title">Request billboard availability</h2>
               <p>Share the basics of your campaign and we will follow up with next steps.</p>
             </div>
@@ -223,7 +207,8 @@ function App() {
             <p>Billboard planning and placement support for mission-driven campaigns.</p>
           </div>
           <nav className="footer-links" aria-label="Footer navigation">
-            <a href="#examples">Examples</a>
+            <a href="#what-we-do">What We Do</a>
+            <a href="#previous-advertisers">Previous Advertisers</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </nav>
