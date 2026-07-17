@@ -143,6 +143,7 @@ function App() {
               action="/thank-you.html"
             >
               <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="subject" value="New Mission Billboards inquiry" />
               <p className="hidden-field" aria-hidden="true">
                 <label>
                   Don't fill this out if you're human:
